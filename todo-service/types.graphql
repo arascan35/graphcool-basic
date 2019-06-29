@@ -4,8 +4,8 @@ type User @model {
   email: String! @isUnique
   password: String!
 
-  caretedAt:DateTime
-  updatedAt: DateTime
+  createdAt:DateTime!
+  updatedAt: DateTime!
   todo: [Todo!]! @relation(name:"UserTodos")
 
 }
@@ -13,12 +13,12 @@ type User @model {
 
 type Todo @model{
   id:ID! @isUnique
-  caretedAt:DateTime
-  updatedAt:DateTime
+  createdAt:DateTime!
+  updatedAt:DateTime!
 
   title:String!
   description:String!
-  completed:Boolean! @defaultValue(value:"False")
+  completed:Boolean! @defaultValue(value:false)
 
   owner:User! @relation(name:"UserTodos")
 }
