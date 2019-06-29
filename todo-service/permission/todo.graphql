@@ -1,0 +1,11 @@
+query($node_id:ID!, $user_id:ID!){
+    SomeTodoExists(
+        filter:{
+            id:$node_id
+            owner:{
+                id:user_id
+            }
+        }
+    )
+
+}
